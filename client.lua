@@ -1,10 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
--- Function to show player details with qb-menu
 local function ShowPlayerDetails()
     local player = QBCore.Functions.GetPlayerData()
     
-    -- Create the menu with full player details and icons
     local menu = {
         {
             header = "Player Details",
@@ -48,14 +46,11 @@ local function ShowPlayerDetails()
         }
     }
 
-    -- Trigger the menu
     exports['qb-menu']:openMenu(menu)
 end
 
--- Register the /showdetails command to trigger the function
 RegisterCommand('showdetails', function()
     ShowPlayerDetails()
 end, false)
 
--- Optionally, bind the function to a keypress
 RegisterKeyMapping('showdetails', 'Show Player Details', 'keyboard', 'F9')
